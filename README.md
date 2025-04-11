@@ -17,13 +17,13 @@ Claro! Aqui está um exemplo de um **README.md** completo e bem estruturado para
 Este é um projeto simples de **cadastro e login de usuários** usando apenas **HTML, CSS e JavaScript puro**. Ele utiliza o `localStorage` do navegador para armazenar as informações de forma local (sem banco de dados ou backend).
 
 ---
+```
 
 ## 🚀 Como rodar o projeto localmente
 
 1. **Clone ou baixe o repositório:**
 
 git clone https://github.com/seu-usuario/nome-do-repositorio.git
-```
 
 2. **Abra o arquivo `index.html` no seu navegador:**
 
