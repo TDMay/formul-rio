@@ -25,21 +25,31 @@ const trocarPage = (page1, page2) =>{
   after = document.querySelector(page2).classList.remove("off");
 }
 
-const cadastrar = () =>{
-    let cadastro = {
-      name: document.querySelector("#name").value,
-      email: document.querySelector("#email").value,
-      cpf: document.querySelector("#cpf").value,
-      phone: document.querySelector("#phone").value,
-      sexo: document.querySelector("#sexo").value,
-      date: document.querySelector("#data").value,
-      cep: document.querySelector("#cep").value,
-      logradouro: document.querySelector("#logra").value,
-      trilha: document.querySelector("#trilha").value,
-      senha: document.querySelector("#senha").value
-    }
-    localStorage.setItem(localStorage.length, JSON.stringify(cadastro));
-    console.log(JSON.parse(localStorage.getItem(localStorage.length--)));
+const cadastrar = () => {
+  let cadastro = {
+    name: document.querySelector("#name").value,
+    email: document.querySelector("#email").value,
+    cpf: document.querySelector("#cpf").value,
+    phone: document.querySelector("#phone").value,
+    sexo: document.querySelector("#sexo").value,
+    date: document.querySelector("#data").value,
+    cep: document.querySelector("#cep").value,
+    logradouro: document.querySelector("#logra").value,
+    trilha: document.querySelector("#trilha").value,
+    senha: document.querySelector("#senha").value
+  }
+
+  // Verifica se já existe algum dado no localStorage
+  let cadastros = JSON.parse(localStorage.getItem("Trilhas")) || [];
+
+  // Adiciona o novo cadastro
+  cadastros.push(cadastro);
+
+  // Salva de volta no localStorage
+  localStorage.setItem("Trilhas", JSON.stringify(cadastros));
+
+  console.log("Dados salvos:", cadastro);
+  alert("Cadastro Realizado com Sucesso!");
 }
 
 const checarTel = (tel) =>{
@@ -50,3 +60,4 @@ const checarTel = (tel) =>{
     erroTel.textContent = "Digite um telefone válido com DDD.";
   }
 }
+
